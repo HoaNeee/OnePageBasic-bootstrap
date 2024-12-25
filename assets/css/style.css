@@ -1,32 +1,29 @@
 /* header */
 .header {
-  display: flex;
-  justify-content: center;
-}
-.header .container-header {
-  padding: 25px 20px;
   position: fixed;
-  background: white;
-  top: 20px;
-  border-radius: 50px;
-  z-index: 1;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  z-index: 999;
+  top: 30px;
+  left: 0;
+  right: 0;
 }
-.header .inner-wrap {
+
+.header .inner-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  background: white;
+  border-radius: 50px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 30px 30px;
+  align-items: center;
 }
 .header .inner-menu ul {
   display: flex;
 }
 .header .inner-menu ul li {
-  margin-left: 47px;
+  margin-right: 20px;
 }
-.header .inner-menu ul li:first-child {
-  margin-left: 0;
-}
+
 .header .inner-menu ul li a {
   color: var(--color-text);
   font-size: 15px;
@@ -48,7 +45,7 @@
 
 @media (max-width: 1199.98px) {
   .header .inner-menu ul li {
-    margin-left: 30px;
+    /* margin-left: 30px; */
   }
 }
 
@@ -71,15 +68,16 @@
   background-size: cover;
   display: flex;
   justify-content: center;
-  background-position: center center;
+  background-position: center bottom;
+  height: 100vh;
 }
 .section-1 .container-section-1 {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .section-1 .inner-content {
-  padding: 250px 0;
   max-width: 600px;
   text-align: center;
 }
@@ -133,6 +131,11 @@
 .section-2 .inner-box:hover .inner-icon {
   background: var(--color-two);
   transition: 350ms;
+}
+@media (max-width: 991.98px) {
+  .section-2 {
+    margin-top: 0;
+  }
 }
 /*End section-2 */
 
@@ -393,22 +396,24 @@
   position: relative;
   overflow: hidden;
 }
-.section-8::before {
+.section-8::after {
   content: "";
   background-image: url(../images/fun-facts-bg.png);
-  width: 140%;
-  height: 140%;
-  position: absolute;
-  bottom: 0;
-  background-size: cover;
   background-position: center center;
+  background-repeat: no-repeat;
+  position: absolute;
+  background-size: cover;
+  width: 120%;
+  height: 120%;
+  bottom: 0;
+  z-index: -1;
 }
+
 .section-8 .inner-wrap {
   position: relative;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 130px 0;
 }
 .section-8 .inner-box {
   width: calc(100% / 4 - 100px);
@@ -422,6 +427,19 @@
   font-weight: 700;
   margin-bottom: 10px;
 }
+.section-8 .inner-box .inner-content {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(0);
+  transition: all 0.3s ease-in-out;
+}
+.section-8 .inner-box .inner-content:hover {
+  transform: translateY(-20px);
+  transition: all 0.3s ease-in-out;
+}
 
 .section-8 .inner-box .inner-desc {
   color: white;
@@ -430,13 +448,14 @@
   content: "";
   background-image: url(../images/circle-dec.png);
   position: absolute;
-  height: 100%;
   background-repeat: no-repeat;
   background-color: transparent;
-  width: 100%;
-  z-index: -1;
-  top: 33px;
-  left: 103px;
+  width: 100px;
+  height: 20px;
+  top: 48%;
+  display: block;
+  left: calc(88% + 20px);
+  background-size: contain;
 }
 
 .section-8 .inner-box:last-child {
@@ -445,7 +464,7 @@
 
 @media (max-width: 991.98px) {
   .section-8 .inner-box.box-icon::after {
-    position: static;
+    display: none;
   }
   .section-8 .inner-box {
     width: calc(100% / 2 - 50px);
@@ -454,12 +473,15 @@
     margin-bottom: 30px;
   }
   .section-8 .inner-wrap {
-    padding: 90px 0;
+    padding: 20px 0;
+  }
+  .section-8 .inner-box .inner-content {
+    height: 100px;
   }
 }
 @media (max-width: 767.98px) {
   .section-8 .inner-wrap {
-    padding: 70px 0;
+    /* padding: 70px 0; */
   }
   .section-8 .inner-box {
     width: 100%;
