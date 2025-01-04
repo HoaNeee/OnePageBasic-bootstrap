@@ -16,12 +16,29 @@
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   padding: 30px 30px;
   align-items: center;
+  transition: all ease-in-out 0.3s;
+}
+
+.header .inner-menu.menu-mobi {
+  display: none;
+}
+.header .inner-content.opend {
+  border-radius: 0;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+
+  transition: 300ms;
 }
 .header .inner-menu ul {
   display: flex;
 }
 .header .inner-menu ul li {
   margin-right: 20px;
+}
+
+.header .inner-menu ul li .active {
+  color: var(--color-two);
+  transition: 250ms;
 }
 
 .header .inner-menu ul li a {
@@ -38,9 +55,10 @@
 .header .inner-bar {
   display: none;
 }
-.header .inner-bar a {
+.header .inner-bar i {
   font-size: 23px;
   color: var(--color-text);
+  cursor: pointer;
 }
 
 @media (max-width: 1199.98px) {
@@ -50,8 +68,30 @@
 }
 
 @media (max-width: 991.98px) {
-  .header .inner-menu ul li {
+  .header .inner-menu {
     display: none;
+  }
+  .header .inner-menu.menu-mobi.opend {
+    display: block;
+    text-align: center;
+  }
+  .header .inner-menu.menu-mobi ul {
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .header .inner-menu.menu-mobi ul li {
+    border-top: 1px solid #e8e5e5;
+    padding: 13px 0;
+    margin: 0;
+  }
+  .header .inner-menu.menu-mobi ul li:hover {
+    background: #f1f1f1;
+    cursor: pointer;
   }
   .header .inner-bar {
     display: block;
